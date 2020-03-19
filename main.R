@@ -1,5 +1,6 @@
-# Grupo Aval Analysis
 
+
+# Configuration
 
 # Clean environment
 rm(list = ls())
@@ -14,7 +15,7 @@ if(!dir.exists("./Data/")) dir.create("./Data/")
 options(scipen = 999)
 
 # Change prompt
-options(prompt = "dash>", continue = " ")
+options(prompt = "dash>", continue = " ", gigits = 4)
 
 ## load convenient functions
 
