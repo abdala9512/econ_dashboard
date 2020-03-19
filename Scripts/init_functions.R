@@ -107,37 +107,6 @@ set_environment <- function(){
         
      '%!in%' <<- Negate('%in%')
      load_libraries()
-        
-        
 }
 
-generate_password <- function() {
-  
-  punct <- c( "#", "$","*",  "+", "-")
-  num <- c(0:9)
-  punct_sample <- sample(punct, 1, replace = T) 
-  num_sample <- sample(num, 2, replace = T)
-  letters_sample <- sample(letters, 3, replace = T)
-  cap_letters_sample <- sample(LETTERS, 1, replace = T)
-  
-  password_vector <- c( letters_sample, punct_sample, 
-                        num_sample,cap_letters_sample)
-  
-  password <- sample(password_vector, 7, replace = F) %>% 
-    stri_paste(., collapse = '')
-  
-  return(password)
-  
-}
-
-gen_country_code <- function(vector){
-  
-  code <- case_when(vector == "Colombia" ~ "CO",
-                     vector == "Ecuador" ~ "EC",
-                     vector == "Venezuela" ~ "VE",
-                    TRUE ~ "NA")
-  return(code)
-  
-  
-}
 
