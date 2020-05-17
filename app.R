@@ -1,12 +1,14 @@
 #
 #    ECONOMIC AND FINANCIAL DASHBOARD
+#    Dashboard with macroeconomic and financial analysis
 #    
-#     Miguel Arquez Abdala
-#     miguel.arquez12@gmail.com
+#
+#     Author: Miguel Arquez Abdala
+#     email: miguel.arquez12@gmail.com
 #     
-#   https://github.com/abdala9512/econ_dashboard
+#     GitHub:https://github.com/abdala9512/econ_dashboard
 #     
-#   https://arquez.shinyapps.io/econ_dashboard/
+#     Link:  https://arquez.shinyapps.io/econ_dashboard/
 
 
 

@@ -25,7 +25,10 @@ source("Scripts/custom_theme.R")
 
 
 header <- dashboardHeaderPlus(
-  title = " ",
+  title = tagList(
+    span(class = "logo-lg", "EconDashboard"),
+    img(src = "sidebar_icon.svg")
+  ),
   enable_rightsidebar = TRUE,
   
   dropdownMenu(
@@ -55,14 +58,13 @@ side_bar <- dashboardSidebar(
   
   sidebarMenu(
     
-    menuItem(tabName = "page1",
+    menuItem(tabName = "main_page",
              text = "Dashboard",
-             icon = icon("codepen
-                         ")),
+             icon = icon("codepen")),
     
     
-    menuItem(tabName = "",
-             text = "Estadística",
+    menuItem(tabName = "news_page",
+             text = "Noticias",
              icon = icon("newspaper")),
     
     
@@ -74,8 +76,8 @@ side_bar <- dashboardSidebar(
              text = "Variables Financieras",
              icon = icon("coins")),
     
-    menuItem(tabName = "",
-             text = "Test3",
+    menuItem(tabName = "forecast_page",
+             text = "Pronósticos",
              icon = icon("chart-line")),
     
     menuItem(tabName ="" ,
@@ -103,35 +105,54 @@ side_bar <- dashboardSidebar(
              icon = icon("chart-pie")),
     
     menuItem(tabName = "",
-             text = "Estadística",
+             text = "Análisis geográfico",
              icon = icon("map-pin")),
     
     menuItem(tabName = "",
              text = "Estadística",
              icon = icon("comments-dollar")),
-    
-    
-    
-    
-    
-    
-    
+  
     menuItem(tabName = "download_tab" ,
              text = "Descarga de datos",
              icon = icon("file-excel"),
              menuSubItem(text = "Datos",
                          icon = icon("dot-circle")))
     
-    
-    
-    
   )
 )
 
 body <- dashboardBody(
-    my_theme
-  
-  
+    my_theme,
+    
+    
+    tabItems(
+      # Main page
+      tabItem(
+        tabName = "main_page",
+      ),
+      # News
+      tabItem(
+        tabName = "news_page",
+        htmlOutput("news_site1")
+      ),
+      # Macroeconomic variables
+      tabItem(
+        tabName = "macro_charts",
+        h1("Variables macroeconómicas")
+      ),
+      # Financial variables
+      tabItem(
+        tabName = "fin_variables",
+        h1("Variables financieras")
+      ),
+      # Forecasts
+      tabItem(
+        tabName = "forecast_page",
+        h1("Pronósticos")
+      )
+    ),
+    
+    
 )
 
 ui <- dashboardPagePlus(
