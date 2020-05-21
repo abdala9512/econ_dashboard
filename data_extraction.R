@@ -1,7 +1,7 @@
 library(WDI)
 library(tidyquant)
 library(Quandl)
-
+library(rdbnomics)
 
 
 # World bank data ---------------------------------------------------------
@@ -38,3 +38,12 @@ EURJPY   <- tq_get("EURJPY=X", get = "stock.prices", from = " 1990-01-01")
 TSR_5Y  <- tq_get("^FVX", get = "stock.prices", from = " 1990-01-01")
 TSR_10Y <- tq_get("^TNX", get = "stock.prices", from = " 1990-01-01")
 TSR_30Y <- tq_get("^TYX", get = "stock.prices", from = " 1990-01-01")
+
+
+
+# RBDnomics
+col_ann_revenues <- rdb(ids = "IMF/FM/A.CO.GGR_G01_GDP_PT")
+
+# National series
+# commodities
+
