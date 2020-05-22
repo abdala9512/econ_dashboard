@@ -149,6 +149,10 @@ body <- dashboardBody(
       tabItem(
         tabName = "forecast_page",
         h1("Pronósticos")
+      ),
+      tabItem(
+        tabName = "forecast_page",
+        h1("Descarga de datos")
       )
     ),
     
